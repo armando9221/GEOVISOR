@@ -1,0 +1,8 @@
+{
+  "type": "FeatureCollection",
+  "name": "BARRIOS_CALDERON_1",
+  "features": [
+    { "type": "Feature", "properties": { "NOMBRE": "CIUDAD ALEGRIA", "BARRIO_ID": "0810021" }, "geometry": { "type": "MultiPolygon", "coordinates": [[[ ... ]]] } },
+    { "type": "Feature", "properties": { "NOMBRE": "LOS DOS PUENTES", "BARRIO_ID": "0810027" }, "geometry": { "type": "MultiPolygon", "coordinates": [[[ ... ]]] } }
+  ]
+}
