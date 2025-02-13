@@ -33,7 +33,6 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/BARRIOS_CALDERON_1.js"></script>
         <script src="data/PUNTOS_OBRAS_2024_2.js"></script>
         <script src="data/ADM_AZC_3.js"></script>
         <script>
@@ -128,10 +127,12 @@
         map.createPane('pane_BARRIOS_CALDERON_1');
         map.getPane('pane_BARRIOS_CALDERON_1').style.zIndex = 401;
         map.getPane('pane_BARRIOS_CALDERON_1').style['mix-blend-mode'] = 'normal';
-        var layer_BARRIOS_CALDERON_1 = new L.geoJson(json_BARRIOS_CALDERON_1, {
+fetch("data/BARRIOS_CALDERON.geojson")
+    .then(response => response.json())
+    .then(data => {
+        var layer_BARRIOS_CALDERON_1 = new L.geoJson(data, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_BARRIOS_CALDERON_1',
             layerName: 'layer_BARRIOS_CALDERON_1',
             pane: 'pane_BARRIOS_CALDERON_1',
             onEachFeature: pop_BARRIOS_CALDERON_1,
@@ -139,6 +140,9 @@
         });
         bounds_group.addLayer(layer_BARRIOS_CALDERON_1);
         map.addLayer(layer_BARRIOS_CALDERON_1);
+    })
+    .catch(error => console.error('Error cargando GeoJSON:', error));
+
         function pop_PUNTOS_OBRAS_2024_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
